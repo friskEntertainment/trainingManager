@@ -11,8 +11,9 @@ class TrainingUtility
 public:
     TrainingUtility();
     static std::string ConvertStringToLowerCase(std::string stringToLower);
-    template <typename tempType>
-    static tempType UserInput(tempType inputType);
+    static std::string PathToExecuteable();
+    template <typename T>
+    static T UserInput(T inputType);
     static void CheckIfDirExist(std::string dirName);
 };
 

@@ -5,6 +5,8 @@
 #include "training_utility.h"
 #include "stats_control.h"
 #include <limits>
+#include <boost/filesystem.hpp>
+#include <windows.h>
 
 using std::string;
 using std::cin;
@@ -24,13 +26,23 @@ string TrainingUtility::ConvertStringToLowerCase(string stringToLower)
     return stringToLower;
 }
 
-void TrainingUtility::CheckIfDirExist(std::string dirName)
+void TrainingUtility::CheckIfDirExist(std::string dirPath)
 {
-
+    boost::filesystem::is_directory(dirPath);
 }
 
-template <typename tempType>
-tempType TrainingUtility::UserInput(tempType inputType)
+string TrainingUtility::PathToExecuteable()
+{
+    //current working directory
+    char buffer[MAX_PATH];
+    std::cout << GetModuleFileName( NULL, buffer, MAX_PATH );
+    string::size_type pos = string( buffer ).find_last_of( "\\/" );
+    return string( buffer ).substr( 0, pos);
+    //string::size_type pos = string( buffer ).find_last_of( "\\/" );
+}
+
+template <typename T>
+T TrainingUtility::UserInput(T inputType)
 {
     while(!(cin >> inputType))
     {

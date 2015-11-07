@@ -3,11 +3,10 @@
 //
 
 #include "stats_control.h"
-#include <iostream>
-#include <fstream>
-#include <string.h>
-#include <stdio.h>
 #include "training_utility.h"
+#include <fstream>
+#include <boost/filesystem.hpp>
+#include <windows.h>
 
 using std::string;
 
@@ -22,23 +21,14 @@ void StatsControl::CreateExerciseStat(
         int numberOfReps,
         double weight)
 {
-    TrainingUtility::CheckIfDirExist("exerciseStats");
+    std::cout << TrainingUtility::PathToExecuteable();
 
-    exerciseName = TrainingUtility::ConvertStringToLowerCase(exerciseName);
 
-    string mainFile = "stats_control.cpp";
-    string pathToProjectFile = __FILE__;
-
-    std::string::size_type index = pathToProjectFile.find(mainFile);
-
-    if(index != std::string::npos)
-    {
-        pathToProjectFile.erase(index, mainFile.length());
-    }
-
-    std::ofstream exerciseStatsFile;
-    string exerciseStatsPath = pathToProjectFile + exerciseName + string(".txt");
-    exerciseStatsFile.open(exerciseStatsPath.c_str(), std::ios_base::app);
-    exerciseStatsFile << numberOfSets << "\t" << numberOfReps << "\t" << weight << std::endl;
-    exerciseStatsFile.close();
+    string gg;
+    std::cin >> gg;
+//    std::ofstream exerciseStatsFile;
+//    string exerciseStatsPath = pathToProjectFile + exerciseName + string(".txt");
+//    exerciseStatsFile.open(exerciseStatsPath.c_str(), std::ios_base::app);
+//    exerciseStatsFile << numberOfSets << "\t" << numberOfReps << "\t" << weight << std::endl;
+//    exerciseStatsFile.close();
 }
