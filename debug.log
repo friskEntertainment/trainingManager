@@ -7,3 +7,57 @@
 [1106/230258:ERROR:main_delegate.cc(564)] Could not load locale pak for en-US
 [1106/230258:ERROR:main_delegate.cc(571)] Could not load cef.pak
 [1106/230258:ERROR:main_delegate.cc(588)] Could not load cef_100_percent.pak
+[1107/192234:WARNING:resource_bundle.cc(304)] locale_file_path.empty()
+[1107/192234:ERROR:main_delegate.cc(564)] Could not load locale pak for en-US
+[1107/192234:ERROR:main_delegate.cc(571)] Could not load cef.pak
+[1107/192234:ERROR:main_delegate.cc(588)] Could not load cef_100_percent.pak
+[1107/192234:WARNING:resource_bundle.cc(497)] locale resources are not loaded
+[1107/192235:WARNING:resource_bundle.cc(304)] locale_file_path.empty()
+[1107/192235:ERROR:main_delegate.cc(564)] Could not load locale pak for en-US
+[1107/192235:ERROR:main_delegate.cc(571)] Could not load cef.pak
+[1107/192235:ERROR:main_delegate.cc(588)] Could not load cef_100_percent.pak
+[1107/192236:WARNING:resource_bundle.cc(304)] locale_file_path.empty()
+[1107/192236:ERROR:main_delegate.cc(564)] Could not load locale pak for en-US
+[1107/192236:ERROR:main_delegate.cc(571)] Could not load cef.pak
+[1107/192236:ERROR:main_delegate.cc(588)] Could not load cef_100_percent.pak
+[1107/192236:WARNING:resource_bundle.cc(497)] locale resources are not loaded
+[1107/192236:WARNING:resource_bundle.cc(304)] locale_file_path.empty()
+[1107/192236:ERROR:main_delegate.cc(564)] Could not load locale pak for en-US
+[1107/192236:ERROR:main_delegate.cc(571)] Could not load cef.pak
+[1107/192236:ERROR:main_delegate.cc(588)] Could not load cef_100_percent.pak
+[1107/192925:WARNING:resource_bundle.cc(304)] locale_file_path.empty()
+[1107/192925:ERROR:main_delegate.cc(564)] Could not load locale pak for en-US
+[1107/192925:ERROR:main_delegate.cc(571)] Could not load cef.pak
+[1107/192925:ERROR:main_delegate.cc(588)] Could not load cef_100_percent.pak
+[1107/192925:WARNING:resource_bundle.cc(497)] locale resources are not loaded
+[1107/192926:WARNING:resource_bundle.cc(304)] locale_file_path.empty()
+[1107/192926:ERROR:main_delegate.cc(564)] Could not load locale pak for en-US
+[1107/192926:ERROR:main_delegate.cc(571)] Could not load cef.pak
+[1107/192926:ERROR:main_delegate.cc(588)] Could not load cef_100_percent.pak
+[1107/193452:WARNING:resource_bundle.cc(304)] locale_file_path.empty()
+[1107/193452:ERROR:main_delegate.cc(564)] Could not load locale pak for en-US
+[1107/193452:ERROR:main_delegate.cc(571)] Could not load cef.pak
+[1107/193452:ERROR:main_delegate.cc(588)] Could not load cef_100_percent.pak
+[1107/193453:WARNING:resource_bundle.cc(497)] locale resources are not loaded
+[1107/193453:WARNING:resource_bundle.cc(304)] locale_file_path.empty()
+[1107/193453:ERROR:main_delegate.cc(564)] Could not load locale pak for en-US
+[1107/193453:ERROR:main_delegate.cc(571)] Could not load cef.pak
+[1107/193453:ERROR:main_delegate.cc(588)] Could not load cef_100_percent.pak
+[1107/193509:WARNING:resource_bundle.cc(304)] locale_file_path.empty()
+[1107/193509:ERROR:main_delegate.cc(564)] Could not load locale pak for en-US
+[1107/193509:ERROR:main_delegate.cc(571)] Could not load cef.pak
+[1107/193509:ERROR:main_delegate.cc(588)] Could not load cef_100_percent.pak
+[1107/193510:WARNING:resource_bundle.cc(304)] locale_file_path.empty()
+[1107/193510:ERROR:main_delegate.cc(564)] Could not load locale pak for en-US
+[1107/193510:ERROR:main_delegate.cc(571)] Could not load cef.pak
+[1107/193510:ERROR:main_delegate.cc(588)] Could not load cef_100_percent.pak
+[1107/193510:WARNING:resource_bundle.cc(497)] locale resources are not loaded
+[1107/193510:WARNING:resource_bundle.cc(497)] locale resources are not loaded
+[1107/193512:WARNING:resource_bundle.cc(304)] locale_file_path.empty()
+[1107/193512:ERROR:main_delegate.cc(564)] Could not load locale pak for en-US
+[1107/193512:ERROR:main_delegate.cc(571)] Could not load cef.pak
+[1107/193512:ERROR:main_delegate.cc(588)] Could not load cef_100_percent.pak
+[1107/193512:WARNING:resource_bundle.cc(304)] locale_file_path.empty()
+[1107/193512:ERROR:main_delegate.cc(564)] Could not load locale pak for en-US
+[1107/193512:ERROR:main_delegate.cc(571)] Could not load cef.pak
+[1107/193512:ERROR:main_delegate.cc(588)] Could not load cef_100_percent.pak

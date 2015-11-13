@@ -1,5 +1,6 @@
 #include <iostream>
 #include "stats_view.h"
+#include "training_utility.h"
 
 using std::cout;
 using std::cin;
@@ -7,7 +8,7 @@ using std::string;
 
 
 int main() {
-    cout << "my directory is " << __FILE__ << "\n";
+    cout << "my directory is " << TrainingUtility::PathToExecuteable() << "\n";
     cout << "What do you wish to do?\n"
     <<"Press 1 - Create program\n"
     <<"Press 2 - Load program\n"

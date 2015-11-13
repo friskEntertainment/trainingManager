@@ -26,9 +26,12 @@ string TrainingUtility::ConvertStringToLowerCase(string stringToLower)
     return stringToLower;
 }
 
-void TrainingUtility::CheckIfDirExist(std::string dirPath)
+bool TrainingUtility::CheckIfDirExist(std::string dirPath)
 {
-    boost::filesystem::is_directory(dirPath);
+    if(boost::filesystem::is_directory(dirPath))
+        return true;
+    else
+        return false;
 }
 
 string TrainingUtility::PathToExecuteable()
@@ -38,7 +41,6 @@ string TrainingUtility::PathToExecuteable()
     std::cout << GetModuleFileName( NULL, buffer, MAX_PATH );
     string::size_type pos = string( buffer ).find_last_of( "\\/" );
     return string( buffer ).substr( 0, pos);
-    //string::size_type pos = string( buffer ).find_last_of( "\\/" );
 }
 
 template <typename T>
