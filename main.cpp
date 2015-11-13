@@ -8,7 +8,7 @@ using std::string;
 
 
 int main() {
-    cout << "my directory is " << TrainingUtility::PathToExecuteable() << "\n";
+//    cout << "my directory is " << TrainingUtility::PathToExecutable() << "\n";
     cout << "What do you wish to do?\n"
     <<"Press 1 - Create program\n"
     <<"Press 2 - Load program\n"

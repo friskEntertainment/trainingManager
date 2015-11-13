@@ -8,6 +8,8 @@
 #include <boost/filesystem.hpp>
 
 using std::string;
+using boost::filesystem::create_directory;
+using trainingUtility::TrainingUtility;
 
 StatsControl::StatsControl()
 {
@@ -20,9 +22,15 @@ void StatsControl::CreateExerciseStat(
         int numberOfReps,
         double weight)
 {
+    string pathToExecutable = TrainingUtility::PathToExecutable();
+    string pathToExerciseStatsFolder = pathToExecutable+"/exercise_stats";
+    if(!TrainingUtility::CheckIfDirExist(pathToExerciseStatsFolder))
+        create_directory(pathToExerciseStatsFolder);
+
     std::ofstream exerciseStatsFile;
-    string exerciseStatsPath = TrainingUtility::PathToExecuteable() + "/" + "exercise_stats/" + exerciseName + string(".txt");
-    exerciseStatsFile.open(exerciseStatsPath.c_str(), std::ios_base::app);
+    exerciseName = TrainingUtility::ConvertStringToLowerCase(exerciseName);
+    string exerciseStatsFilePath = pathToExerciseStatsFolder + "/" + exerciseName + string(".txt");
+    exerciseStatsFile.open(exerciseStatsFilePath.c_str(), std::ios_base::app);
     exerciseStatsFile << numberOfSets << "\t" << numberOfReps << "\t" << weight << std::endl;
     exerciseStatsFile.close();
 }
