@@ -9,7 +9,6 @@ using std::cout;
 using std::string;
 using std::cin;
 using std::getline;
-using trainingUtility::TrainingUtility;
 
 StatsView::StatsView()
 {
@@ -18,7 +17,8 @@ StatsView::StatsView()
 
 void StatsView::DisplayStats()
 {
-    cout << "You mad bro";
+
+    cout << "Display";
 }
 
 void StatsView::ChangeStats()
@@ -42,7 +42,7 @@ void StatsView::ChangeStats()
         case 1 :
             cout << "Enter name of exercise\n";
             exerciseName = TrainingUtility::UserInput(stringType);
-            cout << "number of sets"; ", then weight\n";
+            cout << "number of sets\n";
             numberOfSets = TrainingUtility::UserInput(intType);
             cout << "number of reps\n";
             numberOfReps = TrainingUtility::UserInput(intType);

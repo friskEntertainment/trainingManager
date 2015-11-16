@@ -8,7 +8,7 @@ using std::string;
 
 
 int main() {
-//    cout << "my directory is " << TrainingUtility::PathToExecutable() << "\n";
+    cout << "my directory is " << TrainingUtility::PathToExecutable() << "\n";
     cout << "What do you wish to do?\n"
     <<"Press 1 - Create program\n"
     <<"Press 2 - Load program\n"
@@ -20,14 +20,18 @@ int main() {
     switch (operationCode)
     {
         case 1 :
+            break;
             //call create program function
         case 2 :
+            break;
             //call load program function
         case 3 :
             StatsView::DisplayStats();
+            break;
             //call your stats function
         case 4 :
             StatsView::ChangeStats();
+            break;
             //change stats
         default:
             break;
