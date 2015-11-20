@@ -15,7 +15,7 @@ public:
     static std::string PathToExecutable();
     template <typename T>
     static T UserInput(T inputType);
-    static bool CheckIfDirExist(std::string dirName);
+    static bool CheckIfDirExist(const std::string &dirName);
 };
 
 #endif // TRAINING_UTILITY_H

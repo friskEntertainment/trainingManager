@@ -23,7 +23,7 @@ string TrainingUtility::ConvertStringToLowerCase(string stringToLower) {
     return stringToLower;
 }
 
-bool TrainingUtility::CheckIfDirExist(std::string dirPath) {
+bool TrainingUtility::CheckIfDirExist(const std::string &dirPath) {
     if (boost::filesystem::is_directory(dirPath))
         return true;
     else
