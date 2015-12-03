@@ -6,9 +6,11 @@
 #include "stats_control.h"
 #include "training_utility.h"
 using std::cout;
+using std::endl;
 using std::string;
 using std::cin;
 using std::getline;
+using std::vector;
 
 StatsView::StatsView()
 {
@@ -17,13 +19,30 @@ StatsView::StatsView()
 
 void StatsView::DisplayStats()
 {
+    vector<string> exerciseNames = StatsControl::RetrieveAllExerciseStatsNames();
+    StatsView::DisplayExerciseStatsNames(exerciseNames);
 
-    cout << "Display";
+    int operationCode = 0;
+    operationCode = TrainingUtility::UserInput(operationCode);
+
+    cout << "chosen exercise is: " << exerciseNames[operationCode-1];
+
+    string fdsa;
+    cin >> fdsa;
+}
+
+void StatsView::DisplayExerciseStatsNames(const vector<string>& exerciseNames)
+{
+    for (int i = 0; i < exerciseNames.size(); ++i)
+    {
+        cout << "Press " << i+1 << " - To view statts on: " << exerciseNames[i] << endl;
+    }
 }
 
 void StatsView::ChangeStats()
 {
-    cout << "Press 1 - Create exercise stat\n"
+    cout
+    << "Press 1 - Create exercise stat\n"
     << "Press 2 - Edit exercise stats\n";
     int operationCode = 0;
     cin >> operationCode;

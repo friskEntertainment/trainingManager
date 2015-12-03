@@ -7,8 +7,8 @@ using std::cin;
 using std::string;
 
 
-int main() {
-    cout << "my directory is " << TrainingUtility::PathToExecutable() << "\n";
+int main()
+{
     cout << "What do you wish to do?\n"
     <<"Press 1 - Display stats\n"
     <<"Press 2 - Change stats\n";
