@@ -6,13 +6,15 @@
 #define TRAININGMANAGER_EXERCISE_H
 
 #include <iostream>
-#include <map>
 
-class exercise
+class ExerciseStat
 {
 public:
+    ExerciseStat(std::string, int, int, int);
     std::string name;
-
+    int weight = 0;
+    int reps = 0;
+    int sets = 0;
 };
 
 

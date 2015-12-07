@@ -4,10 +4,12 @@
 
 #ifndef STATSCONTROL_H
 #define STATSCONTROL_H
-#include "training_utility.h"
+
 #include <iostream>
 #include <vector>
 #include <map>
+#include "training_utility.h"
+#include "exercise_stat.h"
 
 class StatsControl
 {
@@ -22,8 +24,8 @@ class StatsControl
                 int numberOfSets,
                 int numberOfReps,
                 double oneRM);
-        static std::map<std::string, std::vector<int> > RetrieveExerciseStats();
         static std::vector<std::string> RetrieveAllExerciseStatsNames();
+        static std::map<int, std::vector<std::string> > RetrieveExerciseStats(std::string);
 };
 #endif // STATSCONTROL_H
 

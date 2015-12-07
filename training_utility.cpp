@@ -2,15 +2,17 @@
 // Created by Thomas.f.o on 22-10-2015.
 //
 
-#include "training_utility.h"
-#include "stats_control.h"
 #include <limits>
 #include <boost/filesystem.hpp>
 #include <windows.h>
+#include <exception>
+#include "training_utility.h"
+#include "stats_control.h"
 
 using std::string;
 using std::cin;
 using std::cout;
+using std::exception;
 
 TrainingUtility::TrainingUtility() {
 
@@ -31,11 +33,19 @@ bool TrainingUtility::CheckIfDirExist(const std::string &dirPath) {
 }
 
 string TrainingUtility::PathToExecutable() {
-    //current working directory
-    char buffer[MAX_PATH];
-    std::cout << GetModuleFileName(NULL, buffer, MAX_PATH);
-    string::size_type pos = string(buffer).find_last_of("\\/");
-    return string(buffer).substr(0, pos);
+    try
+    {
+        //current working directory
+        boost::filesystem::path pathToExe;
+        pathToExe = boost::filesystem::current_path();
+        return pathToExe.string();
+    }
+    catch (exception& e)
+    {
+        cout << e.what() << "\n";
+        int a;
+        cin >> a;
+    }
 }
 
 template<typename T>

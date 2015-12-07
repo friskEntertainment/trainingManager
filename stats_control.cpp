@@ -6,7 +6,7 @@
 #include <map>
 #include <algorithm>
 #include "stats_control.h"
-#include "training_exception.h"
+#include "exercise_stat.h"
 #include <boost/filesystem.hpp>
 
 using std::string;
@@ -32,10 +32,9 @@ vector<string> StatsControl::RetrieveAllExerciseStatsNames()
 
     try
     {
-
-        boost::filesystem::path pathToExerciseStatsFolder{StatsControl::pathToExerciseStatsFolder+"d"}; //Converts the string path to a boost filesystem path object
+        boost::filesystem::path pathToExerciseStatsFolder{StatsControl::pathToExerciseStatsFolder}; //Converts the string path to a boost filesystem path object
         directory_iterator itr{pathToExerciseStatsFolder};
-        directory_iterator endItr{}; //Default iterator, which yields pas-the-end.
+        directory_iterator endItr{}; //Default iterator, which yields past-the-end.
 
         while(itr != endItr)
         {
@@ -73,7 +72,33 @@ void StatsControl::CreateExerciseStat(
 }
 
 
-static std::map<std::string, std::vector<int> > RetrieveExerciseStats()
+map<int, vector<string> > StatsControl::RetrieveExerciseStats(string exerciseStatName)
 {
+    std::ifstream exerciseStatsFile;
+    exerciseStatsFile.open(StatsControl::pathToExerciseStatsFolder+"/"+exerciseStatName+".txt");
 
+
+    string readLine;
+    map<int, vector<string> > statsInFile;
+    int linePosition = 0;
+
+    while(exerciseStatsFile.good())
+    {
+        vector<string> lineInStatsFile;
+        std::getline(exerciseStatsFile, readLine);
+
+        string findWhitespace = " ";
+        size_t startPosition = 0;
+        size_t foundAtPosition = readLine.find(findWhitespace, startPosition);
+        while(foundAtPosition != std::string::npos)
+        {
+            lineInStatsFile.push_back(readLine.substr(startPosition, foundAtPosition-startPosition));
+            startPosition = ++foundAtPosition;
+            foundAtPosition = readLine.find(findWhitespace, startPosition);
+        }
+        statsInFile.insert(make_pair(linePosition, lineInStatsFile));
+        ++linePosition;
+    }
+
+    return statsInFile;
 }

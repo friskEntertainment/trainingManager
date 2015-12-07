@@ -4,13 +4,15 @@
 
 #include "stats_view.h"
 #include "stats_control.h"
-#include "training_utility.h"
+#include <map>
+#include "exercise_stat.h"
 using std::cout;
 using std::endl;
 using std::string;
 using std::cin;
 using std::getline;
 using std::vector;
+using std::map;
 
 StatsView::StatsView()
 {
@@ -25,7 +27,19 @@ void StatsView::DisplayStats()
     int operationCode = 0;
     operationCode = TrainingUtility::UserInput(operationCode);
 
-    cout << "chosen exercise is: " << exerciseNames[operationCode-1];
+    cout << "chosen exercise is: " << exerciseNames[operationCode-1] << endl;
+    map<int, vector<string> > statsForExercise = StatsControl::RetrieveExerciseStats(exerciseNames[operationCode-1]);
+
+
+
+    auto itr = statsForExercise.begin();
+    auto endItr = statsForExercise.end();
+
+    while(itr != endItr)
+    {
+        cout << itr->first << itr->second[0] << endl;
+        ++itr;
+    }
 
     string fdsa;
     cin >> fdsa;
@@ -35,7 +49,7 @@ void StatsView::DisplayExerciseStatsNames(const vector<string>& exerciseNames)
 {
     for (int i = 0; i < exerciseNames.size(); ++i)
     {
-        cout << "Press " << i+1 << " - To view statts on: " << exerciseNames[i] << endl;
+        cout << "Press " << i+1 << " - To view stats on: " << exerciseNames[i] << endl;
     }
 }
 

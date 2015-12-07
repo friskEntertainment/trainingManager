@@ -3,7 +3,7 @@ project(trainingManager)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
-set(SOURCE_FILES main.cpp stats_view.h stats_control.h training_utility.h stats_control.cpp stats_control.h stats_view.cpp stats_view.h training_utility.cpp training_utility.h exercise.h training_exception.h training_exception.cpp training_exception.h exercise.cpp exercise.h)
+set(SOURCE_FILES main.cpp stats_view.h stats_control.h training_utility.h stats_control.cpp stats_control.h stats_view.cpp stats_view.h training_utility.cpp training_utility.h exercise_stat.h training_exception.h training_exception.cpp training_exception.h exercise_stat.cpp exercise_stat.h)
 
 set(Boost_DEBUG 1)
 #SET(CMAKE_INCLUDE_PATH ${CMAKE_INCLUDE_PATH} "C:/Program Files/boost")
