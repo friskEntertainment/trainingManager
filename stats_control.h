@@ -7,7 +7,7 @@
 
 #include <iostream>
 #include <vector>
-#include <map>
+#include <unordered_map>
 #include "training_utility.h"
 #include "exercise_stat.h"
 
@@ -25,7 +25,7 @@ class StatsControl
                 int numberOfReps,
                 double oneRM);
         static std::vector<std::string> RetrieveAllExerciseStatsNames();
-        static std::map<int, std::vector<std::string> > RetrieveExerciseStats(std::string);
+        static std::unordered_map<int, ExerciseStat*> RetrieveExerciseStats(std::string);
 };
 #endif // STATSCONTROL_H
 

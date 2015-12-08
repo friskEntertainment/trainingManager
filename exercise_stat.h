@@ -10,11 +10,11 @@
 class ExerciseStat
 {
 public:
-    ExerciseStat(std::string, int, int, int);
+    ExerciseStat(std::string, int, int, double);
     std::string name;
-    int weight = 0;
-    int reps = 0;
     int sets = 0;
+    int reps = 0;
+    int weight = 0;
 };
 
 

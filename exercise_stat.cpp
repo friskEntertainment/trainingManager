@@ -7,10 +7,10 @@
 
 using std::string;
 
-ExerciseStat::ExerciseStat(string name, int weight, int reps, int sets)
+ExerciseStat::ExerciseStat(string name, int sets, int reps, double weight)
 {
     this->name = name;
-    this->weight = weight;
-    this->reps = reps;
     this->sets = sets;
+    this->reps = reps;
+    this->weight = weight;
 }

@@ -4,15 +4,16 @@
 
 #include "stats_view.h"
 #include "stats_control.h"
-#include <map>
 #include "exercise_stat.h"
+#include <unordered_map>
+
 using std::cout;
 using std::endl;
 using std::string;
 using std::cin;
 using std::getline;
 using std::vector;
-using std::map;
+using std::unordered_map;
 
 StatsView::StatsView()
 {
@@ -28,18 +29,17 @@ void StatsView::DisplayStats()
     operationCode = TrainingUtility::UserInput(operationCode);
 
     cout << "chosen exercise is: " << exerciseNames[operationCode-1] << endl;
-    map<int, vector<string> > statsForExercise = StatsControl::RetrieveExerciseStats(exerciseNames[operationCode-1]);
 
+    unordered_map<int, ExerciseStat*> statsForExercise = StatsControl::RetrieveExerciseStats(exerciseNames[operationCode-1]);
 
+    unordered_map<int, ExerciseStat*>::const_iterator itr = statsForExercise.cbegin();
+    unordered_map<int, ExerciseStat*>::const_iterator endItr = statsForExercise.cend();
 
-    auto itr = statsForExercise.begin();
-    auto endItr = statsForExercise.end();
-
-    while(itr != endItr)
+    for(itr ; itr != endItr ; itr++)
     {
-        cout << itr->first << itr->second[0] << endl;
-        ++itr;
+        std::cout << "key: " << itr->first << " values: " << itr->second->name << " sets: " << itr->second->sets << " reps: " << itr->second->reps  << " weight: " << itr->second->weight << endl;
     }
+
 
     string fdsa;
     cin >> fdsa;

@@ -4,7 +4,9 @@
 
 #include <fstream>
 #include <map>
+#include <unordered_map>
 #include <algorithm>
+#include <string>
 #include "stats_control.h"
 #include "exercise_stat.h"
 #include <boost/filesystem.hpp>
@@ -14,6 +16,7 @@ using std::cout;
 using std::endl;
 using std::vector;
 using std::map;
+using std::unordered_map;
 using boost::filesystem::is_directory;
 using boost::filesystem::create_directory;
 using boost::filesystem::directory_iterator;
@@ -67,36 +70,36 @@ void StatsControl::CreateExerciseStat(
     exerciseName = TrainingUtility::ConvertStringToLowerCase(exerciseName);
     string exerciseStatsFilePath = StatsControl::pathToExerciseStatsFolder + "/" + exerciseName + string(".txt");
     exerciseStatsFile.open(exerciseStatsFilePath.c_str(), std::ios_base::app);
-    exerciseStatsFile << numberOfSets << "\t" << numberOfReps << "\t" << weight << std::endl;
+    exerciseStatsFile << numberOfSets << "\t" << numberOfReps << "\t" << weight << "\t" << std::endl;
     exerciseStatsFile.close();
 }
 
 
-map<int, vector<string> > StatsControl::RetrieveExerciseStats(string exerciseStatName)
+unordered_map<int, ExerciseStat*> StatsControl::RetrieveExerciseStats(string exerciseStatName)
 {
     std::ifstream exerciseStatsFile;
     exerciseStatsFile.open(StatsControl::pathToExerciseStatsFolder+"/"+exerciseStatName+".txt");
 
-
-    string readLine;
-    map<int, vector<string> > statsInFile;
-    int linePosition = 0;
+    unordered_map<int, ExerciseStat*> statsInFile;
+    int linePosition = 1;
 
     while(exerciseStatsFile.good())
     {
-        vector<string> lineInStatsFile;
+        string readLine;
         std::getline(exerciseStatsFile, readLine);
 
-        string findWhitespace = " ";
-        size_t startPosition = 0;
-        size_t foundAtPosition = readLine.find(findWhitespace, startPosition);
-        while(foundAtPosition != std::string::npos)
+        vector<string> seperatedLineInFile = TrainingUtility::splitString(readLine, "\t");
+        if(seperatedLineInFile.size() > 0)
         {
-            lineInStatsFile.push_back(readLine.substr(startPosition, foundAtPosition-startPosition));
-            startPosition = ++foundAtPosition;
-            foundAtPosition = readLine.find(findWhitespace, startPosition);
+            const char * temp1 = seperatedLineInFile[0].c_str();
+            const char * temp2 = seperatedLineInFile[1].c_str();
+            const char * temp3 = seperatedLineInFile[2].c_str();
+            int sets = atoi(temp1);
+            int reps = atoi(temp2);
+            double weight = atof(temp3);
+            ExerciseStat* stat = new ExerciseStat(exerciseStatName, sets, reps, weight);
+            statsInFile.emplace(linePosition, stat);
         }
-        statsInFile.insert(make_pair(linePosition, lineInStatsFile));
         ++linePosition;
     }
 

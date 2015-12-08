@@ -12,6 +12,7 @@ class TrainingUtility
 public:
     TrainingUtility();
     static std::string ConvertStringToLowerCase(std::string stringToLower);
+    static std::vector<std::string> splitString(std::string stringToSplit, std::string stringToFind);
     static std::string PathToExecutable();
     template <typename T>
     static T UserInput(T inputType);

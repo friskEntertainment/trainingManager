@@ -6,12 +6,15 @@
 #include <boost/filesystem.hpp>
 #include <windows.h>
 #include <exception>
+#include <vector>
 #include "training_utility.h"
 #include "stats_control.h"
+
 
 using std::string;
 using std::cin;
 using std::cout;
+using std::vector;
 using std::exception;
 
 TrainingUtility::TrainingUtility() {
@@ -23,6 +26,25 @@ string TrainingUtility::ConvertStringToLowerCase(string stringToLower) {
         stringToLower[i] = tolower(stringToLower[i]);
     }
     return stringToLower;
+}
+
+vector<string> TrainingUtility::splitString(std::string stringToSplit, std::string stringToFind)
+{
+    vector<string> seperatedString;
+
+    size_t startPosition = 0;
+    size_t foundAtPosition = stringToSplit.find_first_of(stringToFind);
+
+    while(foundAtPosition != std::string::npos)
+    {
+        string subString = stringToSplit.substr(startPosition, foundAtPosition-startPosition);
+        seperatedString.push_back(subString);
+
+        startPosition = ++foundAtPosition;
+        foundAtPosition = stringToSplit.find(stringToFind, startPosition);
+    }
+
+    return seperatedString;
 }
 
 bool TrainingUtility::CheckIfDirExist(const std::string &dirPath) {
