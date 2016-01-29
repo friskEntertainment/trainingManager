@@ -8,7 +8,7 @@
 #include <exception>
 #include <vector>
 #include "training_utility.h"
-#include "stats_control.h"
+#include "../control/stats_control.h"
 
 
 using std::string;

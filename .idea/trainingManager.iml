@@ -3,17 +3,21 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/exercise_stat.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/exercise_stat.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/control/exercise_program_control.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/control/exercise_program_control.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/control/stats_control.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/control/stats_control.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/main.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/stats_control.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/stats_control.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/stats_view.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/stats_view.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/training_exception.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/training_exception.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/training_utility.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/training_utility.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/utility/exercise_stat.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/utility/exercise_stat.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/utility/training_exception.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/utility/training_exception.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/utility/training_utility.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/utility/training_utility.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/view/exercise_program_view.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/view/exercise_program_view.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/view/stats_view.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/view/stats_view.h" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

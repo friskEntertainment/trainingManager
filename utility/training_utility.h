@@ -5,6 +5,7 @@
 #ifndef TRAINING_UTILITY_H
 #define TRAINING_UTILITY_H
 #include <iostream>
+#include "training_utility.h"
 
 
 class TrainingUtility

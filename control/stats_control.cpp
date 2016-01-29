@@ -8,7 +8,7 @@
 #include <algorithm>
 #include <string>
 #include "stats_control.h"
-#include "exercise_stat.h"
+#include "../utility/exercise_stat.h"
 #include <boost/filesystem.hpp>
 
 using std::string;

@@ -8,8 +8,8 @@
 #include <iostream>
 #include <vector>
 #include <unordered_map>
-#include "training_utility.h"
-#include "exercise_stat.h"
+#include "../utility/training_utility.h"
+#include "../utility/exercise_stat.h"
 
 class StatsControl
 {

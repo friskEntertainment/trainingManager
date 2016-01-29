@@ -3,8 +3,8 @@
 //
 
 #include "stats_view.h"
-#include "stats_control.h"
-#include "exercise_stat.h"
+#include "../control/stats_control.h"
+#include "../utility/exercise_stat.h"
 #include <unordered_map>
 
 using std::cout;
@@ -39,10 +39,6 @@ void StatsView::DisplayStats()
     {
         std::cout << "key: " << itr->first << " values: " << itr->second->name << " sets: " << itr->second->sets << " reps: " << itr->second->reps  << " weight: " << itr->second->weight << endl;
     }
-
-
-    string fdsa;
-    cin >> fdsa;
 }
 
 void StatsView::DisplayExerciseStatsNames(const vector<string>& exerciseNames)

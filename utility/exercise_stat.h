@@ -14,7 +14,7 @@ public:
     std::string name;
     int sets = 0;
     int reps = 0;
-    int weight = 0;
+    double weight = 0;
 };
 
 
