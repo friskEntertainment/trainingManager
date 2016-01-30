@@ -4,9 +4,16 @@
 
 #include <iostream>
 #include "exercise_program_control.h"
+#include "../utility/training_utility.h"
+#include "../control/exercise_program_control.h"
+#include <boost/filesystem/path.hpp>
 
 using std::string;
-using std::vector;
 
-vector<string> ExerciseProgram::RetrieveAllProgramNames()
-{ }
+string ExerciseProgramControl::pathToExecutable = TrainingUtility::PathToExecutable();
+string ExerciseProgramControl::pathToExerciseProgramFolder = pathToExecutable+"/exercise_programs";
+
+ExerciseProgramControl::ExerciseProgramControl()
+{
+
+}

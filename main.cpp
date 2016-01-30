@@ -38,7 +38,7 @@ int main()
                 StatsView::ChangeStats();
                 break;
             case 3 :
-                ExerciseProgram::ChooseExerciseProgram();
+                ExerciseProgramView::ChooseExerciseProgram();
             case 4 :
                 operateProgram = false;
             default:

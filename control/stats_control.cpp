@@ -29,34 +29,6 @@ StatsControl::StatsControl()
 {
 }
 
-vector<string> StatsControl::RetrieveAllExerciseStatsNames()
-{
-    vector<string> exerciseNames;
-
-    try
-    {
-        boost::filesystem::path pathToExerciseStatsFolder{StatsControl::pathToExerciseStatsFolder}; //Converts the string path to a boost filesystem path object
-        directory_iterator itr{pathToExerciseStatsFolder};
-        directory_iterator endItr{}; //Default iterator, which yields past-the-end.
-
-        while(itr != endItr)
-        {
-            string exerciseName = itr->path().string();
-            exerciseName.erase(0, StatsControl::pathToExerciseStatsFolder.length()+1); //Remove entire path to exercise file name
-            exerciseName.erase(exerciseName.length()-4, 4); //Remove file extension .txt of the file
-
-            exerciseNames.push_back(exerciseName);
-            ++itr;
-        }
-    }
-    catch (boost::filesystem::filesystem_error exp)
-    {
-        cout << exp.what();
-    }
-
-    return exerciseNames;
-}
-
 void StatsControl::CreateExerciseStat(
         string exerciseName,
         int numberOfSets,

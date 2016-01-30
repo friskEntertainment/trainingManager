@@ -9,6 +9,7 @@
 #include <vector>
 #include "training_utility.h"
 #include "../control/stats_control.h"
+#include <boost/filesystem.hpp>
 
 
 using std::string;
@@ -16,6 +17,7 @@ using std::cin;
 using std::cout;
 using std::vector;
 using std::exception;
+using boost::filesystem::directory_iterator;
 
 TrainingUtility::TrainingUtility() {
 
@@ -68,6 +70,35 @@ string TrainingUtility::PathToExecutable() {
         int a;
         cin >> a;
     }
+}
+
+
+vector<string> TrainingUtility::RetrieveNamesOfFilesInFolder(string pathToFolder)
+{
+    vector<string> exerciseNames;
+
+    try
+    {
+        boost::filesystem::path pathToExerciseStatsFolder{pathToFolder}; //Converts the string path to a boost filesystem path object
+        directory_iterator itr{pathToExerciseStatsFolder};
+        directory_iterator endItr{}; //Default iterator, which yields past-the-end.
+
+        while(itr != endItr)
+        {
+            string exerciseName = itr->path().string();
+            exerciseName.erase(0, pathToFolder.length()+1); //Remove entire path to exercise file name
+            exerciseName.erase(exerciseName.length()-4, 4); //Remove file extension .txt of the file
+
+            exerciseNames.push_back(exerciseName);
+            ++itr;
+        }
+    }
+    catch (boost::filesystem::filesystem_error exp)
+    {
+        cout << exp.what();
+    }
+
+    return exerciseNames;
 }
 
 template<typename T>

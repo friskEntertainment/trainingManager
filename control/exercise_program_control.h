@@ -8,10 +8,13 @@
 #include <vector>
 #include <string>
 
-class ExerciseProgram
+class ExerciseProgramControl
 {
     public:
-        static std::vector<std::string> RetrieveAllProgramNames();
+        static std::string pathToExecutable;
+        static std::string pathToExerciseProgramFolder;
+
+        ExerciseProgramControl();
 };
 
 

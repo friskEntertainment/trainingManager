@@ -5,19 +5,22 @@
 #ifndef TRAINING_UTILITY_H
 #define TRAINING_UTILITY_H
 #include <iostream>
+#include <string>
+#include <vector>
 #include "training_utility.h"
 
 
 class TrainingUtility
 {
-public:
-    TrainingUtility();
-    static std::string ConvertStringToLowerCase(std::string stringToLower);
-    static std::vector<std::string> splitString(std::string stringToSplit, std::string stringToFind);
-    static std::string PathToExecutable();
-    template <typename T>
-    static T UserInput(T inputType);
-    static bool CheckIfDirExist(const std::string &dirName);
+    public:
+        TrainingUtility();
+        static std::string ConvertStringToLowerCase(std::string stringToLower);
+        static std::vector<std::string> splitString(std::string stringToSplit, std::string stringToFind);
+        static std::string PathToExecutable();
+        static std::vector<std::string> RetrieveNamesOfFilesInFolder(std::string pathToFolder);
+        template <typename T>
+        static T UserInput(T inputType);
+        static bool CheckIfDirExist(const std::string &dirName);
 };
 
 #endif // TRAINING_UTILITY_H

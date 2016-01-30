@@ -13,11 +13,10 @@
 
 class StatsControl
 {
-    private:
+    public:
         static std::string pathToExecutable;
         static std::string pathToExerciseStatsFolder;
 
-    public:
         StatsControl();
         static void CreateExerciseStat(
                 std::string exerciseName,

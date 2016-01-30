@@ -22,7 +22,7 @@ StatsView::StatsView()
 
 void StatsView::DisplayStats()
 {
-    vector<string> exerciseNames = StatsControl::RetrieveAllExerciseStatsNames();
+    vector<string> exerciseNames = TrainingUtility::RetrieveNamesOfFilesInFolder(StatsControl::pathToExerciseStatsFolder);
     StatsView::DisplayExerciseStatsNames(exerciseNames);
 
     int operationCode = 0;

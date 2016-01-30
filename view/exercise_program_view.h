@@ -7,17 +7,14 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 
-class ExerciseProgram
+class ExerciseProgramView
 {
-    private:
-        static std::string pathToExecutable;
-        static std::string pathToExercisePrograms;
-
     public:
-        ExerciseProgram();
+        ExerciseProgramView();
         static void ChooseExerciseProgram();
-        static void DisplayExercisePrograms();
+        static void DisplayExercisePrograms(const std::vector<std::string>& allExercisePrograms);
 };
 
 
